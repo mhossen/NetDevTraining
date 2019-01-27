@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>For JavaScript Training</title>
+
+</head>
+
+
+<body>
+
+	<h1>This is my web site</h1>
+	</br>
+
+
+	<input id="firstVal" value="" />
+	</br>
+	<input id="secondVal" value="" />
+	</br>
+	<h2 id="results" style="color: red">result</h2>
+	<button type="button" onclick="Add()">Add</button>
+	</br>
+	</br>
+	<button type="button" id="buttonType">Button One</button>
+	<input type="button" id="buttonInput" value="Button Two" />
+
+
+
+	<script>
+
+
+
+		function Add() {
+			var valOne = document.getElementById("firstVal").value;
+			var valTwo = document.getElementById("secondVal").value;
+			var valueOne = parseInt(valOne);
+			var valueTwo = parseInt(valTwo);
+			var result = valueOne + valueTwo;
+			document.getElementById("results").innerHTML = result;
+			//alert(result);
+		}
+	</script>
+</body>
+</html>
