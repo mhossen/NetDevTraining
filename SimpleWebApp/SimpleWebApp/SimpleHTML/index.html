@@ -1,30 +1,69 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en-us">
 <head>
 	<meta charset="utf-8" />
 	<title>For JavaScript Training</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<style>
+		body {
+			max-width: 700px;
+			margin: auto;
+			padding: 1px;
+		}
 
+		div:first-child {
+			width: 600px;
+			background-color: #f2f2f2;
+			padding: 2px;
+		}
+	</style>
 </head>
 
 
 <body>
 
 	<h1>This is my web site</h1>
-	<br/>
-	<a href="UserForm.html">User Form</a>
-	<br/>
-	<input id="firstVal" value="" />
-	<br/>
-	<input id="secondVal" value="" />
-	<br/>
-	<h2 id="results" style="color: green">result</h2>
-	<button type="button" onclick="Add()">Add</button>
-	<br/>
-	<br/>
-	<button type="button" id="buttonType">Button One</button>
-	<input type="button" id="buttonInput" value="Button Two" />
-
-
+	<br />
+	<nav class="navbar">
+		<ul class="nav nav-link">
+			<li class="nav-item">
+				<a href="UserForm.html" class="nav-link active">User Form</a>
+			</li>
+		</ul>
+	</nav>
+	<from>
+		<div>
+			<div class="row">
+				<div class="col-4 small">
+					<input id="firstVal" class="form-control" aria-label="Small" placeholder="Enter first #" />
+				</div>
+				<div class="col-4 small">
+					<input id="secondVal" class="form-control" aria-label="Small" placeholder="Enter second #" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-10">
+					<p>
+						<span>
+							Result:
+							<label id="results" />
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class=" row">
+				<div class="col-sm-10">
+					<button type="button" class="btn btn-success btn-group-sm" onclick="Add()">Add</button>
+					<br />
+					<button type="button" class="btn btn-danger btn-group-sm" onclick="Minus()">Minus</button>
+				</div>
+			</div>
+		</div>
+	</from>
 
 	<script>
 
@@ -35,8 +74,21 @@
 			var valueTwo = parseInt(valTwo);
 			var result = valueOne + valueTwo;
 			document.getElementById("results").innerHTML = result;
+			document.getElementById("results").style.color = "green";
 			//alert(result);
-		}
+		};
+
+		function Minus() {
+			var valOne = document.getElementById("firstVal").value;
+			var valTwo = document.getElementById("secondVal").value;
+			var valueOne = parseInt(valOne);
+			var valueTwo = parseInt(valTwo);
+			var result = valueOne - valueTwo;
+			document.getElementById("results").innerHTML = result;
+			document.getElementById("results").style.color = "red";
+		};
+
+
 	</script>
 </body>
 </html>
